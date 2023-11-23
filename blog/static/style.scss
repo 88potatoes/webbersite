@@ -77,7 +77,7 @@ body {
     overflow: auto;
     font-style: $dark-2;
 
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4, img {
         font-family: "Cormorant Garamond", serif;
         margin: 0.5rem 0 0.5rem 0;
     }
@@ -212,6 +212,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container_404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 a {

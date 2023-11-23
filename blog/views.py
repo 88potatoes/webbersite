@@ -18,3 +18,6 @@ def article(request, article_id):
 
 def find(request):
     return render(request, "blog/find.html")
+
+def custom404(request, exception):
+    return render(request, "blog/404.html", status=404)

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="top-band">
@@ -15,6 +16,13 @@
 {% for paragraph in paragraphs %}
     {% if paragraph == "#br" %}
         <br>
+    {% elif '$img.' in paragraph %}
+        {% with path=paragraph|slice:"5:" %}
+        {% with img_path="images/"|add:path %}
+            
+            <img src={% static img_path %} alt="image">
+        {% endwith %}
+        {% endwith %}
     {% else %}
         <p>{{paragraph}}</p>
     {% endif %}

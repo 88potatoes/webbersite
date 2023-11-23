@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r9n0&^%)&j48pqoex4k$xdm=*m4#&l5_$nzex(g3@n^0gpd-+^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+DEBUG_PROPOGATE_EXCEPTIONS = True
+
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
@@ -125,3 +132,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 COMPRESS_ROOT = 'blog.static'
+
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+

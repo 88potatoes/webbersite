@@ -19,6 +19,7 @@ from django.urls import path, include
 
 import blog
 
+handler404 = "blog.views.custom404"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("blog.urls"))
