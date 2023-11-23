@@ -12,12 +12,23 @@
 <body>
     
     <div class="header">
-        <div class="navbutton"> X </div>
-        <div class="title"><a class="nostyle" href="/"><h1>Da Blog</h1></a></div>       
+        {% comment %} <div class="navbutton"> X </div> {% endcomment %}
+        <div></div>
+        <div class="logo"><a class="nostyle logoelem" href="/"><h1>.Blog</h1></a></div>    
+
+        <div class="links">
+            <a href="{% url 'blog:home' %}" class="nostyle"><div class="hoverable element"><p>Home</p></div></a>
+            <a href="{% url 'blog:articles' %}" class="nostyle"><div class="hoverable element"><p>Articles</p></div></a>
+            <a href="{% url 'blog:find' %}" class="nostyle"><div class="element hoverable"><p>Find me</p></div></a>
+            {% comment %} <a href="https://88potatoes.github.io/" class="nostyle"><div class="element">old</div></a>    {% endcomment %}
+        </div>
     </div>
-    <div class="sidebar">
-        
-    </div>
+    {% comment %} <div class="sidebar">
+        <a href="{% url 'blog:home' %}" class="nostyle"><div class="element">Home</div></a>
+        <a href="{% url 'blog:articles' %}" class="nostyle"><div class="element">Articles</div></a>
+        <a href="{% url 'blog:find' %}" class="nostyle"><div class="element">Find me</div></a>
+        <a href="https://88potatoes.github.io/" class="nostyle"><div class="element">old</div></a>
+    </div> {% endcomment %}
     <div class="content">
         {% block content %}
         {% endblock content %}

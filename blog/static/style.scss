@@ -1,24 +1,42 @@
+$light-1: #d6b575;
+$light-2: #b8884e;
+$mid-1: #986931;
+$dark-1: #5e3e17;
+$dark-2: #36220b;
+
 html {
     margin: 0;
     height: 100%;
+    width: 100%;
     overflow: hidden;
-}
-
-.index {
-    background: blue;
 }
 
 .header {
     height: 5rem;
     width: 100%;
-    background-color: red;
+    background-color: $light-2;
     display: grid;
-    grid-template-columns: 4rem auto 4rem;
+    grid-template-columns: 8rem auto 20rem 8rem;
     // flex-direction: column;
     // align-items: center;
     // justify-content: center;
     position: sticky;
     top: 0;
+    transition: all 0.5s;
+
+    p, h1 {
+        margin: 0;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logoelem {
+        padding: 0.2rem;
+        border-radius: 5%;
+    }
 
     .navbutton {
         width: 3rem;
@@ -26,68 +44,174 @@ html {
         margin: 0.5rem 0.5rem 0.5rem 0.5rem;
         background-color: blue;
     }
+
+    .links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .element {
+        padding: 0.5rem;
+        border-radius: 5%;
+        transition: all 0.5s;
+    }
+
+    .hoverable:hover {
+        background-color: $mid-1;
+    }
+
+    &:hover {
+
+        &:not(:has(*:hover)) {
+            background-color: $mid-1;
+        }
+    }
 }
 
 body {
     margin: 0;
     position: relative;
     height: 100%;
+    width: 100%;
     overflow: auto;
+    font-style: $dark-2;
+
+    h1, h2, h3, h4 {
+        font-family: "Cormorant Garamond", serif;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 350;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+    h4 {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+    
+    p {
+        font-family: "Lora", serif;
+        text-wrap: wrap;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
 }
 
-.sidebar {
-    width: 5rem;
-    background-color: yellow;
-    position: fixed;
-    height: 100%;
-}
+// .sidebar {
+//     width: 5rem;
+//     background-color: $mid-1;
+//     position: fixed;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+
+//     .element {
+//         width: 3rem;
+//         height: 3rem;
+//         background-color: darkcyan;
+//         margin-top: 1.25rem;
+//     }
+// }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    min-height: 100%;
+    background-color: $light-1;
+
+    .top-band {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $light-2;
+        padding: 1rem 0 1rem 0;
+    }
 
     .title {
-        font-family: "Cormorant Garamond", serif;
+        width: 30rem;
+        margin: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 350;
+        .lower {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
 
     .body {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        width: 40rem;
-        font-family: "Lora", serif;
+        align-items: center;
 
-        p {
-            text-wrap: wrap;
-            font-size: 1.125rem;
-            line-height: 1.5rem;
+        .paragraph-container {
+            display: flex;
+            flex-direction: column;
+            width: 40rem;
         }
     }
 }
 
 .article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    
+    justify-content: center;
     width: 12rem;
     height: 12rem;
-    background-color: beige;
-    
-    &:hover {
-        cursor: pointer;
+    background-color: $light-2;
+    margin-bottom: 3rem;
+    width: 30rem;
+    box-shadow: 0 0 0 4px $light-2;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+
+    p {
+        margin: 0;
     }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &.middle-text {
+            justify-content: center;
+        }
+
+        &.high-text {
+            justify-content: first;
+        }
+    }
+
+    &:hover {
+        border: 2px solid $dark-1;
+    }
+    
 }
 
 .article_container {
-    display: grid;
-    column-gap: 2rem;
-    row-gap: 2rem;
-    grid-template-columns: repeat(3, 12rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {

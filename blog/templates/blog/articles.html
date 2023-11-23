@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="index">Index page</h1>
-        
-<h2> index page content</h2>
+<div class="title">
+    <h1 class="index">Articles</h1>
+</div>
 <div class="article_container">
     {% for article in articles %}
         <a class="nostyle" href="{% url 'blog:article' article.id %}">
             <div class="article">
-                <h3>{{ title }}</h3>
-                <p>{{ article.body }}</p>
-                <p>{{ article.id }}</p>
+                <div></div>
+                <div class="middle-text"><h3>{{ article.title }}</h3></div>
+                <div class="high-text"><p>{{ article.date }}</p></div>
             </div>
         </a>
     {% endfor %}
