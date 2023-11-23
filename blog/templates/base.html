@@ -1,0 +1,27 @@
+{% load compress %}
+{% load static %}
+
+<head>
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% endcompress %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="header">
+        <div class="navbutton"> X </div>
+        <div class="title"><a class="nostyle" href="/"><h1>Da Blog</h1></a></div>       
+    </div>
+    <div class="sidebar">
+        
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <div class="footer"></div>
+    
+</body>

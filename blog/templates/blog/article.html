@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="title">
+    <h1>{{ title }}</h1>
+</div>
+<div class="body">
+{% for paragraph in paragraphs %}
+    {% if paragraph == "#br" %}
+        <br>
+    {% else %}
+        <p>{{paragraph}}</p>
+    {% endif %}
+    
+{% endfor %}
+</div>
+{% comment %} <p>{{ article.body }}</p> {% endcomment %}
+{% endblock content %}
