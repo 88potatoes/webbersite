@@ -18,6 +18,8 @@ def articles(request):
 
 def article(request, article_id):
     current_article = get_object_or_404(Article, pk=article_id)
+    if (current_article.date > datetime.today().date()):
+        raise Http404
     paragraphs = current_article.body.split("\r\n")
     edited_paragraphs = ["#br" if paragraph=="" else paragraph for paragraph in paragraphs]
     return render(request, "blog/article.html", {"article": current_article, "paragraphs": edited_paragraphs})
