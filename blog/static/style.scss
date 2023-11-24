@@ -24,10 +24,6 @@ html {
     top: 0;
     transition: all 0.5s;
 
-    p, h1 {
-        margin: 0;
-    }
-
     .logo {
         display: flex;
         align-items: center;
@@ -51,22 +47,37 @@ html {
         align-items: center;
     }
 
-    .element {
-        padding: 0.5rem;
-        border-radius: 5%;
-        transition: all 0.5s;
-    }
-
-    .hoverable:hover {
-        background-color: $mid-1;
-    }
-
     &:hover {
 
         &:not(:has(*:hover)) {
             background-color: $mid-1;
         }
     }
+}
+
+.random_button {
+    margin-top: 1.25rem;
+    background-color: $light-2;
+}
+
+.find_icon {
+    margin: 1.25rem;
+    width: 40%;
+    fill: $light-2;
+}
+
+.element {
+    padding: 0.5rem;
+    border-radius: 5%;
+    transition: all 0.5s;
+
+    p, h1 {
+        margin: 0;
+    }
+}
+
+.hoverable:hover {
+    background-color: $mid-1;
 }
 
 body {
@@ -77,7 +88,7 @@ body {
     overflow: auto;
     font-style: $dark-2;
 
-    h1, h2, h3, h4, img {
+    h1, h2, h3, h4{
         font-family: "Cormorant Garamond", serif;
         margin: 0.5rem 0 0.5rem 0;
     }
@@ -130,7 +141,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-height: 100%;
+    min-height: calc(100% - 5rem);
     background-color: $light-1;
 
     .top-band {
@@ -168,6 +179,35 @@ body {
             width: 40rem;
         }
     }
+}
+
+img {
+    margin: 2rem 0 2rem 0;
+    border: 3px solid $dark-1
+}
+
+.home_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40rem;
+
+    img {
+        width: 70%;
+    }
+}
+
+.hoverable_svg {
+    transition: all 0.5s;
+    &:hover {
+        fill: $mid-1;
+    }
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .article {

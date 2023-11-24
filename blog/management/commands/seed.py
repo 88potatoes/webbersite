@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from ...models import Article
 import logging
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +29,7 @@ class Command(BaseCommand):
 def create_article():
     """creates an article"""
 
-    article = Article(title="new title", body="new body")
+    article = Article(title="new title", body="new body", date=datetime.today().date(), authors="me")
     article.save()
     logger.info("{} was created".format(article))
     return article

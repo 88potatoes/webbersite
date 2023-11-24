@@ -1,7 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<div>Hey welcome to my website</div>
-<div>Feel free to hafe a look around</div>
-<div>Let me make some suggestions</div>
+<div class="home_container">
+    <img src="{% static 'images/IMG_ME.jpeg' %}">
+    <div><p>Hey it's Eric. Welcome to my blog!</p></div>
+    <div><p>Dive right in</p></div>
+    <a href="/" class="nostyle"><div class="hoverable element random_button"><p>Random article</p></div></a>
+</div>
 {% endblock content %}

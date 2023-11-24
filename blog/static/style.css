@@ -15,9 +15,6 @@ html {
   top: 0;
   transition: all 0.5s;
 }
-.header p, .header h1 {
-  margin: 0;
-}
 .header .logo {
   display: flex;
   align-items: center;
@@ -37,15 +34,31 @@ html {
   justify-content: space-around;
   align-items: center;
 }
-.header .element {
+.header:hover:not(:has(*:hover)) {
+  background-color: #986931;
+}
+
+.random_button {
+  margin-top: 1.25rem;
+  background-color: #b8884e;
+}
+
+.find_icon {
+  margin: 1.25rem;
+  width: 40%;
+  fill: #b8884e;
+}
+
+.element {
   padding: 0.5rem;
   border-radius: 5%;
   transition: all 0.5s;
 }
-.header .hoverable:hover {
-  background-color: #986931;
+.element p, .element h1 {
+  margin: 0;
 }
-.header:hover:not(:has(*:hover)) {
+
+.hoverable:hover {
   background-color: #986931;
 }
 
@@ -57,7 +70,7 @@ body {
   overflow: auto;
   font-style: #36220b;
 }
-body h1, body h2, body h3, body h4, body img {
+body h1, body h2, body h3, body h4 {
   font-family: "Cormorant Garamond", serif;
   margin: 0.5rem 0 0.5rem 0;
 }
@@ -89,7 +102,7 @@ body p {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100%;
+  min-height: calc(100% - 5rem);
   background-color: #d6b575;
 }
 .content .top-band {
@@ -122,6 +135,34 @@ body p {
   display: flex;
   flex-direction: column;
   width: 40rem;
+}
+
+img {
+  margin: 2rem 0 2rem 0;
+  border: 3px solid #5e3e17;
+}
+
+.home_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+}
+.home_container img {
+  width: 70%;
+}
+
+.hoverable_svg {
+  transition: all 0.5s;
+}
+.hoverable_svg:hover {
+  fill: #986931;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article {
