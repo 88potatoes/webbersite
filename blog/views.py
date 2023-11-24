@@ -1,4 +1,7 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
+
+from datetime import datetime
 
 from .models import Article
 
@@ -7,7 +10,10 @@ def home(request):
     return render(request, "blog/home.html")
 
 def articles(request):
-    articles = Article.objects.all()
+
+    # only visible articles and past/current articles are processed
+    articles = Article.objects.filter(visible=True, date__lte=datetime.today().date())
+
     return render(request, "blog/articles.html", {"articles": articles})
 
 def article(request, article_id):
