@@ -88,6 +88,7 @@ body {
     overflow: auto;
     font-style: $dark-2;
 
+
     h1, h2, h3, h4{
         font-family: "Cormorant Garamond", serif;
         margin: 0.5rem 0 0.5rem 0;
@@ -141,8 +142,9 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-height: calc(100% - 5rem);
+    min-height: calc(100vh - 5rem);
     background-color: $light-1;
+    background-image: url("http://localhost:8000/static/images/argyle.png");
 
     .top-band {
         width: 100%;
@@ -150,7 +152,7 @@ body {
         flex-direction: column;
         align-items: center;
         background-color: $light-2;
-        padding: 1rem 0 1rem 0;
+        min-height: 14rem;
     }
 
     .title {
@@ -167,17 +169,19 @@ body {
     }
 
     .body {
-        width: 100%;
-        height: 100%;
+        width: min(100%, 45rem);
+        min-height: calc(100vh - 19rem);
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: $light-1;
 
         .paragraph-container {
             display: flex;
             flex-direction: column;
             width: 40rem;
         }
+
     }
 }
 
@@ -190,10 +194,12 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40rem;
+    width: 45rem;
+    background-color: $light-1;
+    height: calc(100vh - 5rem);
 
     img {
-        width: 70%;
+        width: 28rem;
     }
 }
 
@@ -202,6 +208,19 @@ img {
     &:hover {
         fill: $mid-1;
     }
+}
+
+.container_inner {
+    flex: 1;
+}
+
+.article_container_outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $light-1;
+
+    width: 45rem;
 }
 
 .centered {
@@ -252,6 +271,8 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background-color: $light-1;
 }
 
 .container_404 {
